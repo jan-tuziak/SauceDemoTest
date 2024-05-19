@@ -3,6 +3,8 @@ using OpenQA.Selenium.Chrome;
 
 namespace SauceDemoTest;
 
+[Parallelizable(ParallelScope.All)]
+[FixtureLifeCycle(LifeCycle.InstancePerTestCase)]
 public class Tests
 {
     protected IWebDriver driver;
@@ -25,6 +27,12 @@ public class Tests
     [Test]
     public void Test1()
     {
+        Thread.Sleep(10000);
+    }
 
+    [Test]
+    public void Test2()
+    {
+        Thread.Sleep(10000);
     }
 }
